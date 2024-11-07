@@ -44,18 +44,18 @@ def main():
     print("Calculated grade point value cannot exceed 4.0.\n")
 
     numericGrade = 0.0
-    grades = [0.0,0.0,0.0,0.0,0.0,0.0]
-    classes = ["PROG1700", "NETW1700", "OSYS1200", "WEBD1000", "COMM1700", "DBAS1007"]
+    grades = [0.0,0.0,0.0,0.0,0.0,0.0] #list of grades curently empty 
+    classes = ["PROG1700", "NETW1700", "OSYS1200", "WEBD1000", "COMM1700", "DBAS1007"] #list of classes that correspond to the grades
     error = True
 
-    #Gather user inputs
+    #Gather user inputs loop
     for i in range(6):
         error = True
         while error:
-            letterGrade = input("Please enter a letter grade for {0}: ".format(classes[i])).upper()
-            error = errorCheck(letterGrade)
-            modifier = input("Please enter a modifier (+, - or nothing) : ")
-        grades[i] = baseNumericCalculation(letterGrade)
+            letterGrade = input("Please enter a letter grade for {0}: ".format(classes[i])).upper() #asks you for grade for a specific class
+            error = errorCheck(letterGrade) #error checking sequence
+            modifier = input("Please enter a modifier (+, - or nothing) : ") # asks for if your grade has a plus or minus modifier
+        grades[i] = baseNumericCalculation(letterGrade) #adds numeric grade to grades list 
 
     # Output final message and result, with formatting
     for i in range(6):
